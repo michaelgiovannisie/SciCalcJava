@@ -272,10 +272,14 @@ public class ScientificCalculator {
         currentValue *= currentValue * currentValue;
     }
 
-    public void percentage() {
+    public void percent() {
         if (isError) {
             return ;
         } 
         currentValue /= 100;
+    }
+
+    public boolean isError() {
+        return isError;
     }
 }
