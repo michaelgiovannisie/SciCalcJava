@@ -140,7 +140,7 @@ public class MainApplication {
                     calculator.cube();
                     break;
                 case 29:
-                    calculator.percentage();
+                    calculator.percent();
                     break;
                 case 30:
                     isRunning = false;

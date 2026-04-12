@@ -1,7 +1,9 @@
 package com.zipcodewilmington.scientific_calculator;
-import com.zipcodewilmington.scientificcalculator.ScientificCalculator;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import com.zipcodewilmington.scientificcalculator.ScientificCalculator;
 
 public class ScientificCalculatorTest {
 
@@ -221,7 +223,7 @@ public class ScientificCalculatorTest {
     public void testSwitchTrigMode() {
         ScientificCalculator calculator = new ScientificCalculator();
         calculator.setCurrentValue(30);
-        calculator.switchTrigMode();
+        calculator.switchUnitsMode();
         calculator.sine();
         assertEquals(0.5, calculator.getCurrentValue(), 0.001);
     }
