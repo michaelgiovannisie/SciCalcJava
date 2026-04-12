@@ -215,6 +215,7 @@ public class MainApplication {
         System.out.println("24. M+        25. MC          26. MRC");
         System.out.println("27. Change Display Mode");
         System.out.println("28. Absolute Value");
+        System.out.println("29. clear");
 
         System.out.println("0. Exit");
     }
