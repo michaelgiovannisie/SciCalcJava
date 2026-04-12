@@ -3,9 +3,11 @@ package com.zipcodewilmington.scientificcalculator;
 import java.util.Scanner;
 
 /**
- * Created by leon on 2/9/18.
+ * Created by Michael Sie. I'm building a mansion with just a single hammer.
  */
 public class Console {
+
+    private static final Scanner scanner = new Scanner(System.in);  
 
     public static void print(String output, Object... args) {
         System.out.printf(output, args);
@@ -16,17 +18,27 @@ public class Console {
     }
 
     public static String getStringInput(String prompt) {
-        Scanner scanner = new Scanner(System.in);
         println(prompt);
-        String userInput = scanner.nextLine();
-        return userInput;
+        return scanner.nextLine();
     }
 
     public static Integer getIntegerInput(String prompt) {
-        return null;
+    while (true) {
+        try {
+            return Integer.parseInt(getStringInput(prompt));
+        } catch (NumberFormatException e) {
+            println("Invalid input. Please enter an integer.");
+        }
     }
+}
 
     public static Double getDoubleInput(String prompt) {
-        return null;
+    while (true) {
+        try {
+            return Double.parseDouble(getStringInput(prompt));
+        } catch (NumberFormatException e) {
+            println("Invalid input. Please enter a double.");
+        }
     }
+}
 }
