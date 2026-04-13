@@ -42,26 +42,12 @@ public class MainApplication {
             // NORMAL OPERATIONS
             else {
                 if (needsSecondNumber(choice)) {
-                    double second = Console.getDoubleInput("Enter another number: ");
+                    double second = Console.getDoubleInput("Enter your second number: ");
                     handleBinaryChoice(choice, second, calc);
                 } else {
                     handleUnaryChoice(choice, calc);
                 }
                 printDisplay(calc);
-            }
-
-            // CONTINUE?
-
-            System.out.print("\nDo you want to continue? (yes/no): ");
-            String answer = Console.getStringInput("").trim().toLowerCase();
-
-            if (!answer.equals("yes") && !answer.equals("y")) {
-                if (answer.equals("no") || answer.equals("n")) {
-                    System.out.println("Goodbye!");
-                    running = false;
-                } else {
-                    System.out.println("Invalid input.");
-                }
             }
         }
     }

@@ -4,8 +4,7 @@ package com.zipcodewilmington.scientificcalculator;
  * Created by Michael Sie on 4/11/26. 
  * I barely understands how to use a calculator, let alone a scientific one. 
  * But I have a dream of working in a big tech company.
- * I have no idea how to create a scientific calculator, but I wannt to learn. 
- * This is going to be a long journey for me.
+ * I have no idea how to create a scientific calculator, but I wannt to learn. This is going to be a long journey for me.
  */
 
 
@@ -21,9 +20,7 @@ public class ScientificCalculator {
     }
 
     public void setCurrentValue(double currentValue) {
-        if (isError) {
-            return ;
-        } 
+        isError = false;
         this.currentValue = currentValue;
     }   
 
@@ -284,3 +281,4 @@ public class ScientificCalculator {
         return isError;
     }
 }
+
