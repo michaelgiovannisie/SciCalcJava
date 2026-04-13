@@ -28,7 +28,7 @@ public class ScientificCalculatorTest {
         ScientificCalculator calculator = new ScientificCalculator();
         calculator.setCurrentValue(7349);
         calculator.multiply(2364);
-        assertEquals(17382516, calculator.getCurrentValue(), 0.001);
+        assertEquals(17373036, calculator.getCurrentValue(), 0.001);
     }
 
     @Test // 4
@@ -118,7 +118,7 @@ public class ScientificCalculatorTest {
         assertEquals(7349, calculator.getCurrentValue(), 0.001);   
     }
 
-    @Test // 12
+    @Test // 12 ???
     public void testSwitchDisplayMode() {
         ScientificCalculator calculator = new ScientificCalculator();
         calculator.setCurrentValue(8172);
@@ -222,8 +222,8 @@ public class ScientificCalculatorTest {
     @Test // 22
     public void testSwitchTrigMode() {
         ScientificCalculator calculator = new ScientificCalculator();
-        calculator.setCurrentValue(30);
-        calculator.switchUnitsMode();
+        calculator.switchUnitsMode("Radians");
+        calculator.setCurrentValue(Math.PI / 6);
         calculator.sine();
         assertEquals(0.5, calculator.getCurrentValue(), 0.001);
     }
