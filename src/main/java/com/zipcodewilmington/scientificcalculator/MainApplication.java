@@ -4,6 +4,7 @@ public class MainApplication {
 
     private static String trigMode = "Degrees";
     private static String displayMode = "Decimal";
+    private static double displayValue = 0.0;
 
     public static void main(String[] args) {
 
@@ -25,15 +26,12 @@ public class MainApplication {
                 break;
             }
 
-            
-            // MEMORY & SETTINGS (NO INPUT)
 
             if (isNoInputOption(choice)) {
                 handleNoInputChoice(choice, calc);
                 printDisplay(calc);
             }
 
-            // NORMAL OPERATIONS
             else {
                 calc.clear();
 
@@ -50,7 +48,6 @@ public class MainApplication {
                 printDisplay(calc);
             }
 
-            // CONTINUE?
 
             System.out.print("\nDo you want to continue? (yes/no): ");
             String answer = Console.getStringInput("").trim().toLowerCase();
@@ -62,7 +59,6 @@ public class MainApplication {
         }
     }
 
-    // CHECKS
 
     private static boolean needsSecondNumber(int choice) {
         return choice == 1 || choice == 2 || choice == 3
@@ -70,15 +66,21 @@ public class MainApplication {
     }
 
     private static boolean isNoInputOption(int choice) {
-        return choice == 24 || choice == 25 || choice == 26
-            || choice == 27 || choice == 19;
+        return choice == 19
+        || choice == 24 || choice == 25 || choice == 26
+        || choice == 27
+        || choice == 31;
     }
 
-    // MEMORY & SETTINGS
 
     private static void handleNoInputChoice(int choice, ScientificCalculator calc) {
 
         switch (choice) {
+            case 31:                      
+                calc.clear();
+                displayValue = 0.0;
+                System.out.println("Display cleared. Value is now 0.");
+                break;
 
             case 24: // M+
                 double before = calc.getCurrentValue();
@@ -113,7 +115,6 @@ public class MainApplication {
         }
     }
 
-    // TWO NUMBER OPERATIONS
 
     private static void handleBinaryChoice(int choice, double second, ScientificCalculator calc) {
 
@@ -134,7 +135,6 @@ public class MainApplication {
         }
     }
 
-    // ONE NUMBER OPERATIONS
 
     private static void handleUnaryChoice(int choice, ScientificCalculator calc) {
 
@@ -162,19 +162,23 @@ public class MainApplication {
             case 28:
                 calc.setCurrentValue(Math.abs(calc.getCurrentValue()));
                 break;
+            case 30:                        
+                displayValue = calc.getCurrentValue();
+                System.out.println("Display set to: " + displayValue);
+                break;
 
             default:
                 System.out.println("Invalid option.");
         }
     }
 
-    // DISPLAY
 
     private static void printDisplay(ScientificCalculator calc) {
 
         double val = calc.getCurrentValue();
 
-        System.out.print("\n>>> Total [" + displayMode + "]: ");
+       displayValue = calc.getCurrentValue();     
+       System.out.print("\n>>> Display [" + displayMode + "]: ");
 
         switch (displayMode) {
             case "Binary":
@@ -194,7 +198,6 @@ public class MainApplication {
         }
     }
 
-    // MENU
 
     private static void printMenu() {
 
@@ -206,18 +209,21 @@ public class MainApplication {
         System.out.println("5. Square     6. SquareRoot   7. Cube         8. Power");
         System.out.println("9. Inverse    10. +/-         11. %            12. Factorial");
 
-        System.out.println("13. Sin       14. Cos         15. Tan");
-        System.out.println("16. asin      17. acos        18. atan");
+        System.out.println("13. Sine       14. Cosine      15. Tangent");
+        System.out.println("16. arcsine   17. arccosine   18. arctangent");
         System.out.println("19. Toggle Deg/Rad");
 
-        System.out.println("20. log       21. 10^x        22. ln           23. e^x");
+        System.out.println("20. log       21. Inverse log        22. Natural Logarithm          23. e^x");
 
         System.out.println("24. M+        25. MC          26. MRC");
         System.out.println("27. Change Display Mode");
         System.out.println("28. Absolute Value");
-        System.out.println("29. clear");
+        System.out.println("Current value: " + displayValue);  
 
-        System.out.println("0. Exit");
+
+        System.out.println("29. Mod");                       
+        System.out.println("30. Set Value ");   
+        System.out.println("31. Clear Display");
     }
 
     private static String nextDisplayMode(String current) {
