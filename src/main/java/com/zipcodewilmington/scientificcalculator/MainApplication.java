@@ -42,7 +42,7 @@ public class MainApplication {
             // NORMAL OPERATIONS
             else {
                 if (needsSecondNumber(choice)) {
-                    double second = Console.getDoubleInput("Enter your second number: ");
+                    double second = Console.getDoubleInput("Enter another number: ");
                     handleBinaryChoice(choice, second, calc);
                 } else {
                     handleUnaryChoice(choice, calc);
