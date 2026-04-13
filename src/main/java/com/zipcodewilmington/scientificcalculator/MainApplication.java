@@ -206,7 +206,7 @@ public class MainApplication {
         System.out.println("1. Add        2.  Subtract     3. Multiply            4. Divide");
         System.out.println("5. Square     6.  SquareRoot   7. Power               8. Inverse");
         System.out.println("9. +/-        10. Clear");
-        System.out.println("11. Set current value  12. Switch Display Mode");
+        System.out.println("11. Set current value         12. Switch Display Mode");
         System.out.println("13. M+        14. MC          15. MRC");
         System.out.println("16. Sin       17. Cos         18. Tan");
         System.out.println("19. asin      20. acos        21. atan");
